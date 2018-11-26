@@ -8,6 +8,8 @@ info = [
 ]
 
 
+
+
 def precall(devices):
     dut0 = devices[0]
     dut1 = devices[1]
@@ -148,15 +150,19 @@ def chatbot(devices):
 
 
 devices = []
-for i in range(len(info)):
-    devices[i] = smoke.Device(info[i]["device_id"], info[i]["number"], 1717 + i)
+dut = smoke.Device("ce0917192db0a425057e", +821093733475, 1717)
+dut.activate()
+print("good")
+dut.touch_text("Auto")
+# for i in range(len(info)):
+#     devices[i] = smoke.Device(info[i]["device_id"], info[i]["number"], 1717 + i)
 
-for i in range(len(info)):
-    devices[i].activate()
+# for i in range(len(info)):
+#     devices[i].activate()
 
-precall(devices)
-incall(devices)
-postcall(devices)
-one_to_one_chat(devices)
-group_chat(devices)
-chatbot(devices)
+# precall(devices)
+# incall(devices)
+# postcall(devices)
+# one_to_one_chat(devices)
+# group_chat(devices)
+# chatbot(devices)
